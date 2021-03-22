@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-forms-task',
@@ -12,9 +12,11 @@ export class FormsTaskComponent{
     userName: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
   });
-onSubmit(){
+onSubmit(event){
   console.log(`Username is ${this.signInForm.controls.userName.value}`);
   console.log(`Password is ${this.signInForm.controls.password.value}`);
+  event.currentTarget.reset();
+  this.signInForm.reset();
 }
 
 }

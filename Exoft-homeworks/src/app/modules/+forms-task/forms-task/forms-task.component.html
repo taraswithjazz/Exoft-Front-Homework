@@ -1,6 +1,10 @@
 <div class="topic-item">
   <mat-card class="sign-in">
-    <form class="sign-form" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+    <form
+      class="sign-form"
+      [formGroup]="signInForm"
+      (ngSubmit)="onSubmit($event)"
+    >
       <mat-form-field>
         <mat-label>Username</mat-label>
         <input matInput formControlName="userName" />
