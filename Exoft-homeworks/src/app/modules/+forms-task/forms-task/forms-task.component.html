@@ -1,0 +1,25 @@
+<div class="topic-item">
+  <mat-card class="sign-in">
+    <form class="sign-form" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="userName" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" />
+      </mat-form-field>
+      <mat-card-actions>
+        <button
+          mat-raised-button
+          type="submit"
+          class="submit-button"
+          color="primary"
+          [disabled]="!signInForm.valid"
+        >
+          Sign In
+        </button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>
