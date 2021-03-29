@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'forms-task',
     loadChildren: () => import('./modules/+forms-task/forms-task/forms-task.module').then(module => module.FormsTaskModule)
+  },
+  {
+    path: 'service-task',
+    loadChildren: () => import('./modules/+service-task/service-task.module').then(module => module.ServiceTaskModule)
   }
 ];
 
