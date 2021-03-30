@@ -1,1 +1,5 @@
-<p>form works!</p>
+<form>
+  <label for="addTask">Enter Task</label>
+  <input name="addTask" type="text" [formControl]="taskName" />
+  <button type="submit" (click)="AddTask()">Add Task</button>
+</form>

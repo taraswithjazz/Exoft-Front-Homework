@@ -1,4 +1,29 @@
 <div class="topic-item">
   <app-form></app-form>
-  <p>service-task works!</p>
+  <table>
+    <tr>
+      <th>Task</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    <tr *ngFor="let task of tasks">
+      <td>
+        <span *ngIf="!task.editing; else editing">{{ task.title }}</span>
+        <ng-template #editing>
+          <input type="text" [(ngModel)]="task.title" autofocus />
+        </ng-template>
+      </td>
+      <td>
+        <button (click)="editTask(task)" *ngIf="!task.editing; else saveButton">
+          Edit
+        </button>
+        <ng-template #saveButton>
+          <button (click)="saveTask(task)" *ngIf="task.editing">
+            Save
+          </button></ng-template
+        >
+      </td>
+      <td><button (click)="deleteTask(task.id)">Delete</button></td>
+    </tr>
+  </table>
 </div>
