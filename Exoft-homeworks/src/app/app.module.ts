@@ -8,10 +8,12 @@ import { MaterialModule } from './shared/material/material.module';
 // Components
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SubjectTaskComponent } from './modules/+Subject-task/subject-task.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SubjectTaskComponent
   ],
   imports: [
     BrowserModule,

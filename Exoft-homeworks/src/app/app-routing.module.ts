@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'service-task',
     loadChildren: () => import('./modules/+service-task/service-task.module').then(module => module.ServiceTaskModule)
+  },
+  {
+    path: 'subject-task',
+    loadChildren: () => import('./modules/+Subject-task/subject-task.module').then(module => module.SubjectTaskModule)
   }
 ];
 
